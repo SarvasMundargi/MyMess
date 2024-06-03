@@ -14,4 +14,7 @@
 
     <item android:id="@+id/upi"
         android:title="UPI info"/>
+
+    <item android:id="@+id/log_out"
+        android:title="Log Out"/>
 </menu>
