@@ -52,7 +52,9 @@ class LoginActivity : AppCompatActivity() {
                     Toast.makeText(this,"Please fill all the Credentials", Toast.LENGTH_SHORT).show()
                 }
                 else{
+                    binding.loadingAnimation.visibility = View.VISIBLE
                     auth.signInWithEmailAndPassword(email,password).addOnCompleteListener(this){
+                        binding.loadingAnimation.visibility = View.GONE
                         if(it.isSuccessful){
                             Toast.makeText(this,"Logged In😁", Toast.LENGTH_SHORT).show()
                             startActivity(Intent(this, MainActivity::class.java))
@@ -80,7 +82,9 @@ class LoginActivity : AppCompatActivity() {
                     Toast.makeText(this,"Please fill all the Credentials", Toast.LENGTH_SHORT).show()
                 }
                 else{
+                    binding.loadingAnimation.visibility = View.VISIBLE
                     auth.createUserWithEmailAndPassword(email,password).addOnCompleteListener {
+                        binding.loadingAnimation.visibility = View.GONE
                         if(it.isSuccessful){
                             //auth.signOut()
                             val user=auth.currentUser
